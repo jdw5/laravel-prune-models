@@ -30,8 +30,8 @@ class PruneEvents extends Command
     {
         $events = Event::query()
             ->where('created_at', '<=', now()->subHour(4))
-            ->delete();
-            
+            ->count();
+
         return Command::SUCCESS;
     }
 }
